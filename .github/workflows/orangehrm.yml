@@ -27,4 +27,14 @@ jobs:
         run: python auth_setup.py
 
       - name: Run tests
-        run: python -m pytest test_orangehrm_authenticated.py
+        run: |
+          mkdir -p reports
+          python -m pytest test_orangehrm_authenticated.py \
+            --junitxml=reports/orangehrm-results.xml
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orangehrm-test-report
+          path: reports/orangehrm-results.xml
