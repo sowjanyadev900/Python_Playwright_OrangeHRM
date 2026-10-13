@@ -1,0 +1,12 @@
+{
+  "invalid_login": {
+    "username": "wrong_user",
+    "password": "wrong_password",
+    "expected_message": "Invalid credentials"
+  },
+  "forgot_password": {
+    "link_text": "Forgot your password?",
+    "expected_heading": "Reset Password",
+    "username_placeholder": "Username"
+  }
+}

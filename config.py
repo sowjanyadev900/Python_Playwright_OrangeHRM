@@ -1,0 +1,11 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ORANGEHRM_URL = os.getenv("ORANGEHRM_URL")
+ORANGEHRM_USERNAME = os.getenv("ORANGEHRM_USERNAME")
+ORANGEHRM_PASSWORD = os.getenv("ORANGEHRM_PASSWORD")
+
+if not all([ORANGEHRM_URL, ORANGEHRM_USERNAME, ORANGEHRM_PASSWORD]):
+    raise ValueError("Set ORANGEHRM_URL, ORANGEHRM_USERNAME, and ORANGEHRM_PASSWORD in .env")
