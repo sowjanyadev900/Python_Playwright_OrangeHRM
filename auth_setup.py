@@ -6,7 +6,7 @@ AUTH_FILE = Path(__file__).parent / "playwright" / ".auth" / "orangehrm.json"
 AUTH_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
 
